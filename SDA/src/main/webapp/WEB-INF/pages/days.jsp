@@ -50,7 +50,14 @@
 					<%--<a href="http://localhost:8080/sda/days.do?id=${day.id}"><div style="background-color:red"><c:out value="${day.id}"></div></a>--%>
 
 
+<div class="mail">
+<form action="demo_form.asp">
+        Subscribe to newsletter<br>
+   <input type="text" name="mailinput"><br>
 
+  <input type="submit" value="Submit">
+</form>
+</div>
 
 		</div>
 

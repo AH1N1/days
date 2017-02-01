@@ -46,9 +46,14 @@
         <property name="hibernateTemplate" ref="hibernateTemplate"/>
         <constructor-arg ref="day"/>
     </bean>
+    <bean id="mailDao" class="pl.sda.dao.MailDao">
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
+        <constructor-arg ref="mail"/>
+    </bean>
 
     <bean id="hello" class="pl.sda.model.Hello"/>
     <bean id="day" class="pl.sda.model.Day"/>
+    <bean id="mail" class="pl.sda.model.Mail"/>
 
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">

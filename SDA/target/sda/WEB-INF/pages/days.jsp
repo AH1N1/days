@@ -3,6 +3,33 @@
 <html>
 <head>
 <title>Strona glowna</title>
+	<style>
+		.days {
+			background-color:lightgray;
+			padding: 10px;
+			max-width: 80%;
+			margin: auto;
+			align-items: center;
+		}
+
+		.day {
+			background-color:#ebff73;
+			align-content: center;
+			padding: 5px;
+			margin: 5px;
+			display: inline-block;
+
+		}
+		li{
+			color: rgba(36,27,30,0.9);
+			list-style: none;
+			text-align:center;
+			font-size: large;
+			text-decoration-style: solid;
+		}
+
+	</style>
+
 </head>
 <body>
 
@@ -18,12 +45,19 @@
 						<li>date: </li>
 						<li>description: <c:out value="${day.description}"></c:out></li>
 					</ul>
-
+				</div>
 			</c:forEach>
 					<%--<a href="http://localhost:8080/sda/days.do?id=${day.id}"><div style="background-color:red"><c:out value="${day.id}"></div></a>--%>
 
 
+<div class="mail">
+<form action="demo_form.asp">
+        Subscribe to newsletter<br>
+   <input type="text" name="mailinput"><br>
 
+  <input type="submit" value="Submit">
+</form>
+</div>
 
 		</div>
 

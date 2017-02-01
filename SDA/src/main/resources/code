@@ -1,0 +1,120 @@
+package pl.sda.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import pl.sda.model.Client;
+import pl.sda.service.ClientService;
+
+@Controller
+public class ClientController {
+
+	@Autowired
+	private ClientService clientService;
+
+	@RequestMapping("client.do")
+	public String client(Model model) {
+		List<Client> list = clientService.getAll();
+		model.addAttribute("ALL_CLIENTS", list);
+		return "client";
+	}
+	@RequestMapping(value="newClientForm.do", method=RequestMethod.GET)
+    public ModelAndView newClientForm() {
+        ModelAndView mav = new ModelAndView("newClientPage");
+        Client client = new Client();
+        mav.getModelMap().put("newClient", client);
+        return mav;
+    }
+
+    @RequestMapping(value="saveClient.do", method=RequestMethod.POST)
+    public String create(@ModelAttribute("newClient") Client client) {
+    	clientService.save(client);
+        return "redirect:client.do";
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<html>
+<head>
+<title>Strona glowna</title>
+</head>
+<body>
+	<center>
+
+		<h2>Hello:</h2>
+<input type="button" value="New Client " onclick="document.location.href='newClientForm.do'">
+			<table style="border-collapse: collapse;" border="1"
+				bordercolor="#006699" width="700">
+				<tr bgcolor="lightblue">
+					<th>Lp</th>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Surname</th>
+				</tr>
+				<c:forEach var="client" items="${ALL_CLIENTS}" varStatus="status">
+					<tr>
+						<td><c:out value="${status.index+1}"></c:out></td>
+						<td><c:out value="${client.id}"></c:out></td>
+						<td><c:out value="${client.name}"></c:out></td>
+						<td><c:out value="${client.surname}"></c:out></td>
+					</tr>
+			</c:forEach>
+			</table>
+	</center>
+</body>
+</html>
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+<html>
+<head>
+	<title>Add new hello </title>
+</head>
+<body style="font-family: Arial; font-size:smaller;">
+<table  bgcolor="lightblue" width="750" height="500" align="center" style="border-collapse: collapse;" border="1" bordercolor="#006699" >
+	<tr>
+		<td align="center"><h3>Nowe hello</h3></td>
+	</tr>
+	<tr valign="top" align="center">
+    <td align="center">
+ 		<form:form action="saveClient.do" method="post" commandName="newClient">
+
+				<table width="500" style="border-collapse: collapse;" border="0" bordercolor="#006699" cellspacing="2" cellpadding="2">
+						<tr>
+							<td width="100" align="right">Name</td>
+							<td width="150">
+							<input type="text" name="name" />
+							<td align="left"/>
+						</tr>
+						<tr>
+							<td width="100" align="right">Surname</td>
+							<td width="150">
+							<input type="text" name="surname" />
+							<td align="left"/>
+						</tr>
+					<tr>
+						<td colspan="3" align="center">
+						<input type="submit" name="" value="Zapisz">
+						&nbsp;&nbsp;
+						<input type="reset" name="" value="Resetuj">
+						&nbsp;&nbsp;
+						</td>
+					</tr>
+				</table>
+		</form:form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

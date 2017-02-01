@@ -3,6 +3,8 @@
 <html>
 <head>
 <title>Strona glowna</title>
+
+
 </head>
 <body>
 	<center>
