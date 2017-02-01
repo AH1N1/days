@@ -18,14 +18,14 @@
 					<th>Date</th>
 					<th>Description</th>
 				</tr>
-                <c:forEach var="day" items="${SINGLE_DAY}" varStatus="status">
+
 					<tr>
-						<td><c:out value="${day.id}"></c:out></td>
-						<td><c:out value="${day.name}"></c:out></td>
+						<td><c:out value="${SINGLE_DAY.id}"></c:out></td>
+						<td><c:out value="${SINGLE_DAY.name}"></c:out></td>
 						<td><c:out value=""></c:out></td>
-						<td><c:out value="${day.description}"></c:out></td>
+						<td><c:out value="${SINGLE_DAY.description}"></c:out></td>
 					</tr>
-			</c:forEach>
+
 			</table>
 	</center>
 </body>

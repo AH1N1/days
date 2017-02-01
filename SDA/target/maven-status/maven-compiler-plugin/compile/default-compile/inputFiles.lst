@@ -1,9 +1,9 @@
-C:\Users\RENT\IdeaProjects\SDA\SDA\src\main\java\pl\sda\dao\AbstractDao.java
-C:\Users\RENT\IdeaProjects\SDA\SDA\src\main\java\pl\sda\service\DayService.java
-C:\Users\RENT\IdeaProjects\SDA\SDA\src\main\java\pl\sda\service\HelloService.java
-C:\Users\RENT\IdeaProjects\SDA\SDA\src\main\java\pl\sda\model\Hello.java
-C:\Users\RENT\IdeaProjects\SDA\SDA\src\main\java\pl\sda\model\Day.java
-C:\Users\RENT\IdeaProjects\SDA\SDA\src\main\java\pl\sda\controller\DayController.java
-C:\Users\RENT\IdeaProjects\SDA\SDA\src\main\java\pl\sda\dao\DayDao.java
-C:\Users\RENT\IdeaProjects\SDA\SDA\src\main\java\pl\sda\dao\HelloDao.java
-C:\Users\RENT\IdeaProjects\SDA\SDA\src\main\java\pl\sda\controller\HelloController.java
+D:\Java\projekty IDEA\src\days\SDA\src\main\java\pl\sda\controller\DayController.java
+D:\Java\projekty IDEA\src\days\SDA\src\main\java\pl\sda\service\DayService.java
+D:\Java\projekty IDEA\src\days\SDA\src\main\java\pl\sda\dao\AbstractDao.java
+D:\Java\projekty IDEA\src\days\SDA\src\main\java\pl\sda\model\Day.java
+D:\Java\projekty IDEA\src\days\SDA\src\main\java\pl\sda\dao\HelloDao.java
+D:\Java\projekty IDEA\src\days\SDA\src\main\java\pl\sda\dao\DayDao.java
+D:\Java\projekty IDEA\src\days\SDA\src\main\java\pl\sda\model\Hello.java
+D:\Java\projekty IDEA\src\days\SDA\src\main\java\pl\sda\service\HelloService.java
+D:\Java\projekty IDEA\src\days\SDA\src\main\java\pl\sda\controller\HelloController.java
