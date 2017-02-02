@@ -40,4 +40,12 @@ public class Mail implements Serializable {
 
     public Mail() {
     }
+
+    @Override
+    public String toString() {
+        return "Mail{" +
+                "id=" + id +
+                ", mail='" + mail + '\'' +
+                '}';
+    }
 }

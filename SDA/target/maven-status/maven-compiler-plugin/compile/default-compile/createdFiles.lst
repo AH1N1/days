@@ -1,6 +1,7 @@
 pl\sda\model\Hello.class
 pl\sda\service\DayService.class
 pl\sda\model\Mail.class
+pl\sda\repo\MailRepo.class
 pl\sda\service\HelloService.class
 pl\sda\dao\MailDao.class
 pl\sda\dao\AbstractDao.class

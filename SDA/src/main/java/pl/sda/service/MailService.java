@@ -7,17 +7,23 @@ package pl.sda.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.sda.dao.MailDao;
+import pl.sda.repo.MailRepo;
 import pl.sda.model.Mail;
 
 @Service
 public class MailService {
     @Autowired
-    private MailDao mailDao;
+    private MailDao mailDAo;
 
     public void save(Mail mail) {
-        Mail tmpMail = mailDao.getByMail(mail.getMail());
-        if (null == tmpMail)
-            mailDao.save(mail);
+        Mail tmpMail = null;
+        if (null != mail.getMail()) {
+            tmpMail = mailDAo.getByMail(mail.getMail());
+            if (null == tmpMail)
+                mailDAo.save(mail);
+        }
     }
+
+
 }
 

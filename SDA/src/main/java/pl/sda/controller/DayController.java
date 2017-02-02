@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import pl.sda.model.Day;
 import pl.sda.model.Hello;
+import pl.sda.model.Mail;
 import pl.sda.service.DayService;
 
 import java.util.List;
@@ -28,7 +29,9 @@ public class DayController {
 	public String day(Model model, @RequestParam(required = false) Long id) {
 		if (null==id){
 			List<Day> list = dayService.getAll();
+			Mail mail = new Mail();
 			model.addAttribute("ALL_DAYS", list);
+			model.addAttribute("MAIL",mail);
 			return "days";
 		}
 		else {

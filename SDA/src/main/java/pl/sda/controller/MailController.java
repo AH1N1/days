@@ -11,12 +11,14 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @Controller
 public class MailController {
 
-	@Autowired
-	private MailService mailService;
+    @Autowired
+    private MailService mailService;
 
-	@RequestMapping(value = "days.do", method = POST)
-	public void get(@ModelAttribute("mail") Mail mail) {
-	mailService.save(mail);
-
-	}
+    @RequestMapping(value = "days.do", method = POST)
+    public String get(@ModelAttribute("MAIL") Mail mail) {
+        System.out.println(mail);
+        if (null != mail)
+            mailService.save(mail);
+        return "days";
+    }
 }

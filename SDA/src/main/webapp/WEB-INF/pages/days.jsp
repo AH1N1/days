@@ -33,7 +33,7 @@
 </head>
 <body>
 
-
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 		<h2>Days:</h2>
 		<div class="days">
 			<c:forEach var="day" items="${ALL_DAYS}" varStatus="status">
@@ -51,11 +51,12 @@
 
 
 <div class="mail">
-<form action="demo_form.asp">
+<%-- dodac ponizej action="days.do" --%>
+<form method="post" modelAttribute="MAIL">
         Subscribe to newsletter<br>
-   <input type="text" name="mailinput"><br>
+   <input type="text" name="mail"  ><br>
 
-  <input type="submit" value="Submit">
+  <input type="submit" value="submit">
 </form>
 </div>
 
@@ -63,7 +64,26 @@
 
 
 
+<form:form action="days.do" method="post" commandName="MAIL">
 
+				<table width="500" style="border-collapse: collapse;" border="0" bordercolor="#006699" cellspacing="2" cellpadding="2">
+						<tr>
+							<td width="100" align="right">Name</td>
+							<td width="150">
+							<input type="text" name="mail" />
+							<td align="left"/>
+						</tr>
+
+					<tr>
+						<td colspan="3" align="center">
+						<input type="submit" name="" value="save">
+						&nbsp;&nbsp;
+						<input type="reset" name="" value="Resetuj">
+						&nbsp;&nbsp;
+						</td>
+					</tr>
+				</table>
+		</form:form>
 
 
 
