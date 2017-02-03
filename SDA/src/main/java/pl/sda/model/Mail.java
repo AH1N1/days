@@ -1,12 +1,18 @@
 package pl.sda.model;
 
-import org.springframework.stereotype.Service;
 
-import javax.persistence.*;
 
+
+
+import org.hibernate.validator.constraints.Email;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
-import static javax.persistence.GenerationType.*;
+import static javax.persistence.GenerationType.IDENTITY;
 
 /**
  * Created by RENT on 2017-02-01.
@@ -20,6 +26,7 @@ public class Mail implements Serializable {
     @Id @GeneratedValue(strategy = IDENTITY)
     private Long id;
 
+    @Email
     private String mail;
 
     public Long getId() {

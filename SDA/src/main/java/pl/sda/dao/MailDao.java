@@ -1,11 +1,8 @@
 package pl.sda.dao;
 
 import org.hibernate.SQLQuery;
-import pl.sda.model.Hello;
 import pl.sda.model.Mail;
 
-
-import javax.persistence.TypedQuery;
 import java.util.List;
 
 /**
