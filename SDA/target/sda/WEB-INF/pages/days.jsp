@@ -29,21 +29,32 @@
 		}
 
 	</style>
+<script type="text/javascript">
+	function send(){
+        var http = new XMLHttpRequest();
+        http.open("POST","days.do",true);
+        http.setRequestHeader("Content-type", "application/xml");
+        http.send(document.MAIL);
+	    alert("You have subscribed to newsletter!")
+	    return false;
+	}
 
+
+
+</script>
 </head>
 <body>
 
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 		<h2>Days:</h2>
 		<div class="days">
 			<c:forEach var="day" items="${ALL_DAYS}" varStatus="status">
 
 				<div class="day">
 					<ul>
-						<li>id: <c:out value="${day.id}"></c:out></li>
-						<li>name: <c:out value="${day.name}"></c:out></li>
-						<li>date: </li>
-						<li>description: <c:out value="${day.description}"></c:out></li>
+						<li>id: <c:out value="${day.getId()}"></c:out></li>
+						<li>name: <c:out value="${day.getName()}"></c:out></li>
+						<li>date: <c:out value="${day.getDate()}"></c:out></li>
+						<li>description: <c:out value="${day.getDescription()}"></c:out></li>
 					</ul>
 				</div>
 			</c:forEach>
@@ -54,9 +65,9 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 <%-- dodac ponizej action="days.do" --%>
 <form method="post" modelAttribute="MAIL">
         Subscribe to newsletter<br>
-   <input type="text" name="mail"  ><br>
+   <input type="text" name="mail"  id="sendMail"><br>
 
-  <input type="submit" value="submit">
+  <input type="submit" value="Submit">
 </form>
 </div>
 
@@ -64,26 +75,26 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 
 
-<form:form action="days.do" method="post" commandName="MAIL">
+<%--<form:form action="days.do" method="post" commandName="MAIL">--%>
 
-				<table width="500" style="border-collapse: collapse;" border="0" bordercolor="#006699" cellspacing="2" cellpadding="2">
-						<tr>
-							<td width="100" align="right">Name</td>
-							<td width="150">
-							<input type="text" name="mail" />
-							<td align="left"/>
-						</tr>
+				<%--<table width="500" style="border-collapse: collapse;" border="0" bordercolor="#006699" cellspacing="2" cellpadding="2">--%>
+						<%--<tr>--%>
+							<%--<td width="100" align="right">Name</td>--%>
+							<%--<td width="150">--%>
+							<%--<input type="text" name="mail" />--%>
+							<%--<td align="left"/>--%>
+						<%--</tr>--%>
 
-					<tr>
-						<td colspan="3" align="center">
-						<input type="submit" name="" value="save">
-						&nbsp;&nbsp;
-						<input type="reset" name="" value="Resetuj">
-						&nbsp;&nbsp;
-						</td>
-					</tr>
-				</table>
-		</form:form>
+					<%--<tr>--%>
+						<%--<td colspan="3" align="center">--%>
+						<%--<input type="submit" name="" value="save">--%>
+						<%--&nbsp;&nbsp;--%>
+						<%--<input type="reset" name="" value="Resetuj">--%>
+						<%--&nbsp;&nbsp;--%>
+						<%--</td>--%>
+					<%--</tr>--%>
+				<%--</table>--%>
+		<%--</form:form>--%>
 
 
 

@@ -19,11 +19,12 @@ public class MailController {
     private MailService mailService;
 
     @RequestMapping(value = "days.do", method = POST)
-    public String get(@Valid @ModelAttribute("MAIL") Mail mail, BindingResult result) {
+    public void get(@Valid @ModelAttribute("MAIL") Mail mail, BindingResult result) {
         System.out.println(mail);
         if (result.hasErrors()) System.out.println("error in binding result");
         else if (null != mail)
             mailService.save(mail);
-        return "days";
+
+        //return "days";
     }
 }

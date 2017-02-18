@@ -1,8 +1,11 @@
 package pl.sda.model;
 
+import org.joda.time.LocalDate;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+
 
 /**
  * Created by RENT on 2017-01-30.

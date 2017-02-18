@@ -1,33 +1,45 @@
 package pl.sda.model;
 
-import javax.persistence.*;
+import org.joda.time.LocalDate;
+import org.springframework.cglib.core.Local;
+
 import java.io.Serializable;
-import java.util.Date;
+
 
 /**
  * Created by Woj on 2017-01-31.
  */
 
 
-public class Counter {
-    private Date today;
+public class Counter implements Serializable {
+    private LocalDate today;
 
-    private Date day;
+    private LocalDate nextDay;
 
-    public Date getToday() {
+    private Integer daysLeft;
+
+    public Integer getDaysLeft() {
+        return daysLeft;
+    }
+
+    public void setDaysLeft(Integer daysLeft) {
+        this.daysLeft = daysLeft;
+    }
+
+    public LocalDate getToday() {
         return today;
     }
 
-    public void setToday(Date today) {
+    public void setToday(LocalDate today) {
         this.today = today;
     }
 
-    public Date getDay() {
-        return day;
+    public LocalDate getNextDay() {
+        return nextDay;
     }
 
-    public void setDay(Date day) {
-        this.day = day;
+    public void setNextDay(LocalDate nextDay) {
+        this.nextDay = nextDay;
     }
 
     public Counter() {

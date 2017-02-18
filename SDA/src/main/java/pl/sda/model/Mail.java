@@ -5,6 +5,7 @@ package pl.sda.model;
 
 
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,7 +27,7 @@ public class Mail implements Serializable {
     @Id @GeneratedValue(strategy = IDENTITY)
     private Long id;
 
-    @Email
+     @NotEmpty   @Email
     private String mail;
 
     public Long getId() {

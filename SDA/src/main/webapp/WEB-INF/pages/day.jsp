@@ -22,7 +22,7 @@
 					<tr>
 						<td><c:out value="${SINGLE_DAY.id}"></c:out></td>
 						<td><c:out value="${SINGLE_DAY.name}"></c:out></td>
-						<td><c:out value=""></c:out></td>
+						<td><c:out value="${SINGLE_DAY.getDate()}"></c:out></td>
 						<td><c:out value="${SINGLE_DAY.description}"></c:out></td>
 					</tr>
 

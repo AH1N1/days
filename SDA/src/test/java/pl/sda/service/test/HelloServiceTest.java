@@ -9,9 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import pl.sda.model.Hello;
-import pl.sda.service.HelloService;
-
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/applicationContext.xml")
@@ -31,4 +28,6 @@ public class HelloServiceTest {
 		List<Hello> list = helloService.getAll();
 		Assert.assertNotNull(list);
 	}
+
+
 }

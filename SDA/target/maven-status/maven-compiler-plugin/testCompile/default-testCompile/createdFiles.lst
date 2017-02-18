@@ -1,2 +1,4 @@
-pl\sda\service\test\Tests.class
+pl\sda\dao\DayDaoTest.class
 pl\sda\service\test\HelloServiceTest.class
+pl\sda\conspects\timeTest.class
+pl\sda\service\test\Tests.class
